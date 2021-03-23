@@ -30,19 +30,17 @@ try {
 var formation = [4, 4, 3];
 
 //write your function here
-createFormation = (defender, midfield, forward) => {
- if(Array.length === 0){
+createFormation = (formation) => {
+ if(formation.length === 0){
    return null;
  }
  let obj = {
-   defender: formation[0],
-   midfield: formation[1],
-   forward: formation[2]
- }
- return obj
+   "defender": formation[0],
+   "midfield": formation[1],
+   "forward": formation[2]
+ };
+ return obj;
 }
-return createFormation(2,3,1);
-return createFormation(2,4,5);
 
 // Dont edit the following code
 
@@ -53,12 +51,57 @@ try {
 }
 
 //Progression 3 - Filter players that debuted in ___ year
+filterByDebut = (year) => {
+  let arr=[];
+  for( let i = 0; i<players.length; i++){
+    if(players[i].debut == year){
+      arr.push(players[i]);
+    }
+  }
+  return arr;
+}
 
 //Progression 4 - Filter players that play at the position _______
+filterByPosition = (position) => {
+  arr2 =[];
+  for( let i = 0; i < players.length; i++){
+    if(players[i].position == position){
+      arr2.push(players[i])
+    }
+  }
+  return arr2;
+}
 
 //Progression 5 - Filter players that have won ______ award
+filterByAward = (awardName) => {
+  let arr3 = [];
+  for(let i = 0; i < players.length; i++){
+    for(let j = 0; j < players[i].awards.length; j++){
+      if(arr3.includes(players[i])){
+        arr3.push(players[i])
+      }
+    }
+  }
+  return arr3;
+}
 
 //Progression 6 - Filter players that won ______ award ____ times
+filterByAwardxTimes = (awardName, noOfTimes) => {
+  let arr = [];
+  for(var i = 0; i < players.length; i++){
+    var count = 0;
+    for(var j = 0; j < players[i].awards.length; i++){
+      if(players[i].award[j].name == awardName){
+        count++;
+      }
+    }
+    if(count == noOfTimes){
+      arr.push(players[i])
+    }
+  }
+  return arr;
+}
+
 
 //Progression 7 - Filter players that won ______ award and belong to ______ country
 
