@@ -5,7 +5,15 @@ let currentTeam = "Manchester FC";
 let trophiesWon = 27;
 
 //Write your function here
-
+createManager = (managerName, managerAge, currentTeam, trophieswon) => {
+  const manager_details = [
+    managerName,
+    managerAge,
+    currentTeam,
+    trophieswon    
+  ]
+  return manager_details;
+}
 // Don't edit the following code
 try {
   var manager = createManager(
@@ -22,6 +30,19 @@ try {
 var formation = [4, 4, 3];
 
 //write your function here
+createFormation = (defender, midfield, forward) => {
+ if(Array.length === 0){
+   return null;
+ }
+ let obj = {
+   defender: formation[0],
+   midfield: formation[1],
+   forward: formation[2]
+ }
+ return obj
+}
+return createFormation(2,3,1);
+return createFormation(2,4,5);
 
 // Dont edit the following code
 
