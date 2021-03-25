@@ -108,6 +108,14 @@ filterByAwardxTimes = (awardName, noOfTimes) => {
 //Progression 8 - Filter players that won atleast ______ awards, belong to ______ team and are younger than ____
 
 //Progression 9 - Sort players in descending order of their age
+sortByAge = () =>{
+let arr = [];
+for( var i = 0; i < players.length; i++){
+  arr.push(players[i].age.reverse()) ;
+
+}
+return arr;
+}
 
 //Progression 10 - Sort players beloging to _____ team in descending order of awards won
 
